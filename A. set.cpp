@@ -69,7 +69,7 @@ void solve()
         else if(s=="find")
         {
             cin >> x;
-            if(st.count(x))
+            if(st.count(x)>0)
             {
                 cout << "found" << endl;
             }
@@ -82,13 +82,30 @@ void solve()
         {
             cin >> x;
             auto ans = st.lower_bound(x);
-            cout << *ans << endl;
+            if(ans==st.end())
+            {
+                cout << -1 << endl;
+            }
+            else
+            {
+                cout << *ans << endl;
+            }
+
         }
         else
         {
             cin >> x;
             auto ans = st.upper_bound(x);
-            cout << *ans << endl;
+            if(ans==st.end())
+            {
+                cout << -1 << endl;
+
+            }
+            else
+            {
+                cout << *ans << endl;
+            }
+
         }
     }
 
